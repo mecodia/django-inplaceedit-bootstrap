@@ -18,7 +18,12 @@
         transformField: function (tags) {
             var self = $.inplaceeditform;
             var field = $(tags).find(self.opts.fieldTypes);
-            field.addClass("form-control");
+            if (field.attr('type') === "checkbox") {
+                field.addClass("form-check-input");
+            }
+            else {
+                field.addClass("form-control");
+            }
             field.css("padding-bottom", "0px");
             field.css("padding-top", "0px");
         }
